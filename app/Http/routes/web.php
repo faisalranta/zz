@@ -95,7 +95,6 @@ Route::group(['prefix' => 'ccd','before' => 'csrf'], function () {
 
 //End Companies
 
-
 //Start Users
 Route::group(['prefix' => 'users','before' => 'csrf'], function () {
 	Route::get('/u', 'UsersController@toDayActivity');
