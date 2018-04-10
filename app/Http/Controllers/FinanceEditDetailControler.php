@@ -29,7 +29,9 @@ class FinanceEditDetailControler extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-   
+   	function muzzamil(){
+   		return 'Kese ho';
+   	}
    	function editCashPaymentPendingVoucherDetail(){
 		Helpers::companyDatabaseConnection($_GET['m']);
 		
