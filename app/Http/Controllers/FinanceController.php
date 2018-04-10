@@ -120,6 +120,22 @@ class FinanceController extends Controller
 		return view('Finance.viewCashPaymentVoucherList',compact('accounts','pvs'));
 	}
 
+	public function editCashPaymentVoucherForm(){
+		Helpers::companyDatabaseConnection($_GET['m']);
+		$accounts = new Account;
+		$accounts = $accounts::orderBy('level1', 'ASC')
+    				->orderBy('level2', 'ASC')
+					->orderBy('level3', 'ASC')
+					->orderBy('level4', 'ASC')
+					->orderBy('level5', 'ASC')
+					->orderBy('level6', 'ASC')
+					->orderBy('level7', 'ASC')
+    				->get();
+   		Helpers::reconnectMasterDatabase();
+   		return view('Finance.editCashPaymentVoucherForm',compact('accounts'));
+
+   	}
+
 	
 	public function createBankPaymentVoucherForm(){
 		Helpers::companyDatabaseConnection($_GET['m']);
