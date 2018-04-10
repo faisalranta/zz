@@ -173,6 +173,22 @@ class FinanceController extends Controller
 		Helpers::reconnectMasterDatabase();
 		return view('Finance.viewBankPaymentVoucherList',compact('accounts','pvs'));
 	}
+
+	public function editBankPaymentVoucherForm(){
+		Helpers::companyDatabaseConnection($_GET['m']);
+		$accounts = new Account;
+		$accounts = $accounts::orderBy('level1', 'ASC')
+    				->orderBy('level2', 'ASC')
+					->orderBy('level3', 'ASC')
+					->orderBy('level4', 'ASC')
+					->orderBy('level5', 'ASC')
+					->orderBy('level6', 'ASC')
+					->orderBy('level7', 'ASC')
+    				->get();
+   		Helpers::reconnectMasterDatabase();
+   		return view('Finance.editBankPaymentVoucherForm',compact('accounts'));
+
+   	}
 	
 	public function createCashReceiptVoucherForm(){
 		Helpers::companyDatabaseConnection($_GET['m']);
@@ -209,6 +225,21 @@ class FinanceController extends Controller
 		Helpers::reconnectMasterDatabase();
 		return view('Finance.viewCashReceiptVoucherList',compact('accounts','rvs'));
 	}
+
+	public function editCashReceiptVoucherForm(){
+		Helpers::companyDatabaseConnection($_GET['m']);
+		$accounts = new Account;
+		$accounts = $accounts::orderBy('level1', 'ASC')
+    				->orderBy('level2', 'ASC')
+					->orderBy('level3', 'ASC')
+					->orderBy('level4', 'ASC')
+					->orderBy('level5', 'ASC')
+					->orderBy('level6', 'ASC')
+					->orderBy('level7', 'ASC')
+    				->get();
+   		Helpers::reconnectMasterDatabase();
+   		return view('Finance.editCashReceiptVoucherForm',compact('accounts'));
+	}
 	
 	public function createBankReceiptVoucherForm(){
 		Helpers::companyDatabaseConnection($_GET['m']);
@@ -244,6 +275,21 @@ class FinanceController extends Controller
 					 ->get();
 		Helpers::reconnectMasterDatabase();
 		return view('Finance.viewBankReceiptVoucherList',compact('accounts','rvs'));
+	}
+
+	public function editBankReceiptVoucherForm(){
+		Helpers::companyDatabaseConnection($_GET['m']);
+		$accounts = new Account;
+		$accounts = $accounts::orderBy('level1', 'ASC')
+    				->orderBy('level2', 'ASC')
+					->orderBy('level3', 'ASC')
+					->orderBy('level4', 'ASC')
+					->orderBy('level5', 'ASC')
+					->orderBy('level6', 'ASC')
+					->orderBy('level7', 'ASC')
+    				->get();
+   		Helpers::reconnectMasterDatabase();
+   		return view('Finance.editBankReceiptVoucherForm',compact('accounts'));
 	}
 	
 }
