@@ -15,7 +15,7 @@
 		<td class="text-right"><?php echo $row1['particulars'];?></td>
 		<td class="text-right"><?php echo $row1['particulars'];?></td>
 		<td class="text-right"><?php echo $row1['particulars'];?></td>
-		<td class="text-center">Action</td>	
+		<td class="text-center"> -- Action -- </td>	
 	</tr>
 <?php
 	}
