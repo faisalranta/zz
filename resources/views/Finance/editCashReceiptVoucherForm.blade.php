@@ -17,9 +17,9 @@
 		<div class="well">
 			<div class="row">
 				<?php 
-					if($rvsDetail->pv_status == 1){
+					if($rvsDetail->rv_status == 1){
 						echo Form::open(array('url' => 'fad/editCashReceiptPendingVoucherDetail?m='.$m.'','id'=>'cashReceiptVoucherForm'));
-				}else if($rvsDetail->pv_status == 2){
+				}else if($rvsDetail->rv_status == 2){
 					echo Form::open(array('url' => 'fad/editCashReceiptApproveVoucherDetail?m='.$m.'','id'=>'cashReceiptVoucherForm'));
 				}
 				?>

@@ -303,7 +303,9 @@ Route::group(['prefix' => 'fad','before' => 'csrf'], function () {
 	Route::post('/editCashReceiptApproveVoucherDetail', 'FinanceEditDetailControler@editCashReceiptApproveVoucherDetail');
 
 	Route::post('/addBankReceiptVoucherDetail', 'FinanceAddDetailControler@addBankReceiptVoucherDetail');
+	
 	Route::post('/editBankReceiptPendingVoucherDetail', 'FinanceEditDetailControler@editBankReceiptPendingVoucherDetail');
+
 	Route::post('/editBankReceiptApproveVoucherDetail', 'FinanceEditDetailControler@editBankReceiptApproveVoucherDetail');
 });
 
