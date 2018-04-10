@@ -375,3 +375,6 @@ Route::group(['prefix' => 'sdc','before' => 'csrf'], function (){
 	Route::get('/viewCreditCustomerList','SalesDataCallController@viewCreditCustomerList');
 });
 //End Sales
+
+//Start Report
+//End Report
