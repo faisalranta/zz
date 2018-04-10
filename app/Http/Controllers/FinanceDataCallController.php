@@ -10,6 +10,7 @@ use App\Models\Pvs;
 use App\Models\Pvs_data;
 use App\Models\Rvs;
 use App\Models\Rvs_data;
+use App\Models\Transactions;
 use Helpers;
 use Input;
 use Auth;
@@ -1184,6 +1185,23 @@ class FinanceDataCallController extends Controller
 		Helpers::reconnectMasterDatabase();
 	}
 	
+  public function filterViewLedgerReport(){
+    $fromDate = $_GET['fromDate'];
+    $toDate = $_GET['toDate'];
+    $m = $_GET['m'];
+    $account_id = $_GET['account_id'];
+    $counter = 1;
+    $makeTotalAmount = 0;
+    Helpers::companyDatabaseConnection($_GET['m']);
+    
+    $transactions = new Transactions;
+    $transactions = $transactions::whereBetween('v_date',[$fromDate,$toDate])
+           ->where('status','=','1')
+           ->where('acc_id','=',$account_id)
+           ->get();
+    return view('finance.filterViewLedgerReport',compact('transactions','fromDate','toDate'));
+    Helpers::reconnectMasterDatabase();
+  }
 	
 	
 }

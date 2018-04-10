@@ -284,6 +284,8 @@ Route::group(['prefix' => 'finance','before' => 'csrf'], function () {
 	Route::get('/viewBankReceiptVoucherList','FinanceController@viewBankReceiptVoucherList');
 	Route::get('/editBankReceiptVoucherForm','FinanceController@editBankReceiptVoucherForm');
 
+	Route::get('/viewLedgerReport','FinanceController@viewLedgerReport');
+
 });
 
 Route::group(['prefix' => 'fad','before' => 'csrf'], function () {
@@ -335,6 +337,9 @@ Route::group(['prefix' => 'fdc','before' => 'csrf'], function () {
 	Route::get('/filterBankPaymentVoucherList', 'FinanceDataCallController@filterBankPaymentVoucherList');
 	Route::get('/filterCashReceiptVoucherList', 'FinanceDataCallController@filterCashReceiptVoucherList');
 	Route::get('/filterBankReceiptVoucherList', 'FinanceDataCallController@filterBankReceiptVoucherList');
+	Route::get('/filterViewLedgerReport', 'FinanceDataCallController@filterViewLedgerReport');
+
+	
 
 });
 //End Finance

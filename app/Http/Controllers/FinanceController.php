@@ -291,5 +291,20 @@ class FinanceController extends Controller
    		Helpers::reconnectMasterDatabase();
    		return view('Finance.editBankReceiptVoucherForm',compact('accounts'));
 	}
+
+	public function viewLedgerReport(){
+		Helpers::companyDatabaseConnection($_GET['m']);
+		$accounts = new Account;
+		$accounts = $accounts::orderBy('level1', 'ASC')
+    				->orderBy('level2', 'ASC')
+					->orderBy('level3', 'ASC')
+					->orderBy('level4', 'ASC')
+					->orderBy('level5', 'ASC')
+					->orderBy('level6', 'ASC')
+					->orderBy('level7', 'ASC')
+    				->get();
+   		Helpers::reconnectMasterDatabase();
+   		return view('Finance.viewLedgerReport',compact('accounts'));
+	}
 	
 }

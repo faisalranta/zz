@@ -4,6 +4,15 @@
 			echo "hello";
 		}
 
+		public static function checkLedgerVoucherType($param1){
+			if($param1 == 1){
+				echo 'Journal';
+			}else if($param1 == 2){
+				echo 'Payment';
+			}else if($param1 == 3){
+				echo 'Receipt';
+			}
+		}
 		public static function getCompanyName($param1){
 			echo $companyName = DB::selectOne('select `name` from `company` where `id` = '.$param1.'')->name;
 		}
